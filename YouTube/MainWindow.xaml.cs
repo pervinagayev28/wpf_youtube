@@ -23,12 +23,12 @@ namespace YouTube
 
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        public ObservableCollection<VideoInforms> videoss { get; set; }
+        public ObservableCollection<VideoInforms>? videoss { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            videoss = new();
+            videoss = new ObservableCollection<VideoInforms>();
             DataContext = this;
 
         }
@@ -42,8 +42,8 @@ namespace YouTube
 
         private void clicked(object sender, RoutedEventArgs e)
         {
-            videoss = new(VideoDatabase.Serachvideo(textbox.Text.ToString()));
-            PropertyChanged!.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
+            //videoss = new(VideoDatabase.Serachvideo(textbox.Text.ToString()));
+            //PropertyChanged!.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
         }
 
 
@@ -62,6 +62,13 @@ namespace YouTube
         private void clikedwindow(object sender, MouseButtonEventArgs e)
         {
             webView.Visibility = Visibility.Hidden;
+        }
+
+        private void serached(object sender, RoutedEventArgs e)
+        {
+            videoss = new ObservableCollection<VideoInforms>(VideoDatabase.Serachvideo(textbox.Text.ToString()));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
+         
         }
     }
 }

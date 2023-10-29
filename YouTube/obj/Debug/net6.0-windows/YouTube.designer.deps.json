@@ -56,6 +56,26 @@
           }
         }
       },
+      "MaterialDesignColors/3.0.0-ci429": {
+        "runtime": {
+          "lib/net6.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/5.0.0-ci429": {
+        "dependencies": {
+          "MaterialDesignColors": "3.0.0-ci429",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39"
+        },
+        "runtime": {
+          "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "Microsoft.Web.WebView2/1.0.1133-prerelease": {
         "runtime": {
           "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
@@ -86,6 +106,14 @@
             "rid": "win-x86",
             "assetType": "native",
             "fileVersion": "1.0.1133.0"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
           }
         }
       },
@@ -128,12 +156,33 @@
       "path": "google.apis.youtube.v3/1.62.1.3205",
       "hashPath": "google.apis.youtube.v3.1.62.1.3205.nupkg.sha512"
     },
+    "MaterialDesignColors/3.0.0-ci429": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vdzr8Wda3IH11TOjxBQ9eIY+V8mwAeNBPIm3yKV7aZ53f7kqfe01yjfPEkl7pOuXQqYZ2wIarSd79NwH2GUI2w==",
+      "path": "materialdesigncolors/3.0.0-ci429",
+      "hashPath": "materialdesigncolors.3.0.0-ci429.nupkg.sha512"
+    },
+    "MaterialDesignThemes/5.0.0-ci429": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-euNbMbUtBeGdUqjSI5oIwuhE30IP/B/9NzV1MTkOO9oVfBXrJfQxtORH0Xm3NNUm5iQzfaMGzVrP9CWfNuiUlQ==",
+      "path": "materialdesignthemes/5.0.0-ci429",
+      "hashPath": "materialdesignthemes.5.0.0-ci429.nupkg.sha512"
+    },
     "Microsoft.Web.WebView2/1.0.1133-prerelease": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZOYYPbmM3PJap358Uj5iP5itA/kWEF4BUxtvEQk95E9y92u0BuTY/bt/Od0j5Jjt/S8GAk5Yjb8xfn49IjBNvA==",
       "path": "microsoft.web.webview2/1.0.1133-prerelease",
       "hashPath": "microsoft.web.webview2.1.0.1133-prerelease.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

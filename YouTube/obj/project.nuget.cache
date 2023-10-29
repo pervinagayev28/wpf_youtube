@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aaMH0ZaBk0LxXWsOObB8qlLUseH7ZyOJB8HviQn6AljvpFoS4M2OJLfX3L5KZm5WeXqf3rsKj+AyWstdA8ji3w==",
+  "dgSpecHash": "/JBHCBzOAlv11EtSF8NbNjki3b9jKQeyMWB3jmQr3b3QSiOWzBF2Ex59AjUy+4jQohVqxpoUrilpHoKI3NDdMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\OneDrive\\Desktop\\YouTube\\YouTube\\YouTube.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,10 @@
     "C:\\Users\\user\\.nuget\\packages\\google.apis.auth\\1.62.1\\google.apis.auth.1.62.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\google.apis.core\\1.62.1\\google.apis.core.1.62.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\google.apis.youtube.v3\\1.62.1.3205\\google.apis.youtube.v3.1.62.1.3205.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\materialdesigncolors\\3.0.0-ci429\\materialdesigncolors.3.0.0-ci429.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\materialdesignthemes\\5.0.0-ci429\\materialdesignthemes.5.0.0-ci429.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.web.webview2\\1.0.1133-prerelease\\microsoft.web.webview2.1.0.1133-prerelease.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": [
