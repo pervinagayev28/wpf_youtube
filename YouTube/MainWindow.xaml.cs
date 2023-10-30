@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,7 +26,7 @@ namespace YouTube
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public ObservableCollection<VideoInforms>? videoss { get; set; }
-
+        public string? CommonLink { get; set; } = "https://www.youtube.com/watch?v=";
         public MainWindow()
         {
             InitializeComponent();
@@ -49,7 +51,7 @@ namespace YouTube
 
 
 
-       
+
 
         private void cliked(object sender, MouseButtonEventArgs e)
         {
@@ -68,7 +70,26 @@ namespace YouTube
         {
             videoss = new ObservableCollection<VideoInforms>(VideoDatabase.Serachvideo(textbox.Text.ToString()));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
-         
+
+        }
+
+        private void liked(object sender, RoutedEventArgs e)
+        {
+            var item = ((Button)sender).DataContext as VideoInforms;
+            File.AppendAllText("..//..//..//DatabaseFiles//LikedVdeos.json", $@"{CommonLink}{item?.VideoId}{Environment.NewLine}");
+        }
+
+        private void watchingLikedVideos(object sender, RoutedEventArgs e)
+        {
+            var LikedVideos = File.ReadAllLines("..//..//..//DatabaseFiles//LikedVdeos.json");
+            List<VideoInforms> temp = new List<VideoInforms>();
+            foreach (var videoLink in LikedVideos)
+            {
+                var video = VideoDatabase.Serachvideo(videoLink);
+                temp.Add(video[0]);
+            }
+            videoss = new(temp);
+            PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(nameof(videoss)));
         }
     }
 }
