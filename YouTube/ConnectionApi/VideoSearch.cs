@@ -21,7 +21,7 @@ namespace YouTube.ConnectionApi
 
             var searchListRequest = youtubeService.Search.List("snippet");
             searchListRequest.Q = query;
-            searchListRequest.MaxResults = 20;
+            searchListRequest.MaxResults = 5;
 
             var searchListResponse = searchListRequest.Execute();
             var videos = new List<VideoInforms>();

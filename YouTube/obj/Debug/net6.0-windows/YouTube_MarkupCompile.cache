@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\user\OneDrive\Desktop\YouTube\YouTube\App.xaml
-2-620919484
+3-1189280134
 3-1937078483
 51132438731
 206319700319
-MainWindow.xaml;Resources\IconStyle.xaml;
+MainWindow.xaml;Resources\Button_style.xaml;Resources\IconStyle.xaml;
 
 False
 

@@ -9,6 +9,9 @@
         MouseDoubleClick="clikedwindow"
            Title="MainWindow" Height="720" Width="1080">
     <Grid  >
+
+        <!--Grid Colors-->
+
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="white" Offset="0.0" />
@@ -16,6 +19,11 @@
 
             </LinearGradientBrush>
         </Grid.Background>
+
+        <!--Grid Colors-->
+
+        <!--Grid Definitions-->
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="*"/>
@@ -26,15 +34,36 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <icon:PackIcon Kind="Menu" Grid.Row="0" Grid.Column="0" Style="{DynamicResource IconStyle}"/>
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,10,0,0">
-            <Button Click="watchingLikedVideos" Background="Transparent" BorderThickness="0" Margin="0,0,0,50" Grid.Row="0" Grid.Column="0">
-            <icon:PackIcon  Kind="Like"  Style="{DynamicResource IconStyle}"/>
+        <!--Grid Definitions-->
+
+
+
+        <!--< START left side GridRow 0 GridColm 0-->
+
+
+        <Button Margin="0,10,0,0"  Click="watchingLikedVideos"   Grid.Row="0" Style="{DynamicResource Button_style}" >
+            <icon:PackIcon  Kind="Menu"  Style="{DynamicResource IconStyle}"/>
+        </Button>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,0,0">
+            <Button Click="watchingLikedVideos"  Style="{DynamicResource Button_style}">
+                <icon:PackIcon  Kind="Like"  Style="{DynamicResource IconStyle}" Height="30" Width="30"/>
             </Button>
-            <icon:PackIcon Margin="0,0,0,50" Kind="Trash" Grid.Row="0" Grid.Column="0" Style="{DynamicResource IconStyle}"/>
-            <icon:PackIcon Margin="0,0,0,50" Kind="Clock" Grid.Row="0" Grid.Column="0" Style="{DynamicResource IconStyle}"/>
-            <icon:PackIcon Margin="0,0,0,50" Kind="Refresh" Grid.Row="0" Grid.Column="0" Style="{DynamicResource IconStyle}"/>
+
+            <Button   Style="{DynamicResource Button_style}" >
+                <icon:PackIcon   Kind="Trash"  Style="{DynamicResource IconStyle}"/>
+            </Button>
+            <Button  Style="{DynamicResource Button_style}" >
+                <icon:PackIcon  Kind="Clock"  Style="{DynamicResource IconStyle}"/>
+            </Button>
+            <Button Click="historyClicked"   Style="{DynamicResource Button_style}">
+                <icon:PackIcon Kind="Refresh" Style="{DynamicResource IconStyle}"/>
+            </Button>
+
         </StackPanel>
+
+        <!--< STOP left side GridRow 0 GridColm 0-->
 
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -42,8 +71,12 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Button Margin="0,10,0,0" Style="{DynamicResource Button_style}">
+                <Grid>
+                    <icon:PackIcon Grid.Column="0" Kind="Youtube" Style="{DynamicResource IconStyle}" />
 
-            <icon:PackIcon Grid.Column="0" Kind="Youtube" Style="{DynamicResource IconStyle}" Height="100" Width="1000"/>
+                </Grid>
+            </Button>
 
 
             <Border Padding="10,0,0,0" Grid.Column="1" Margin="35" CornerRadius="20" BorderThickness="2" BorderBrush="Black">
@@ -55,38 +88,20 @@
         VerticalAlignment="Center">
                 </TextBox>
             </Border>
-            <StackPanel Grid.Column="2" Orientation="Horizontal">
-                <Button Click="serached" Height="70" Background="Transparent" BorderThickness="0">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="Button">
-                                        <Grid>
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Grid>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="False">
-                                                <Setter Property="RenderTransform">
-                                                    <Setter.Value>
-                                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
-                                                    </Setter.Value>
-                                                </Setter>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
+            <StackPanel  Grid.Column="2" Orientation="Horizontal">
+                <Button Margin="0,10,0,0" Click="serached" Style="{DynamicResource Button_style}">
                     <icon:PackIcon Style="{DynamicResource IconStyle}" Kind="Search"/>
                 </Button>
-                <icon:PackIcon Margin="10" Style="{DynamicResource IconStyle}" Kind="Video"/>
-                <icon:PackIcon Margin="10" Style="{DynamicResource IconStyle}" Kind="EmoticonManProfile" Height="70" Width="70"/>
+                <Button Margin="10,10,0,0" Click="serached" Style="{DynamicResource Button_style}">
+                    <icon:PackIcon  Style="{DynamicResource IconStyle}" Kind="Video"/>
+                </Button>
+                <Button Margin="10,10,0,0" Click="serached" Style="{DynamicResource Button_style}">
+                    <icon:PackIcon  Style="{DynamicResource IconStyle}" Kind="EmoticonBaby"/>
+                </Button>
             </StackPanel>
         </Grid>
-    
-        <Border Margin="10" BorderThickness="10" BorderBrush="Black" CornerRadius="20" Grid.Row="1" Grid.Column="1">
+
+        <Border Margin="10" BorderThickness="20" BorderBrush="Black" CornerRadius="100" Grid.Row="1" Grid.Column="1">
             <ListView Name="videosListview" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding videoss}"  Background="Transparent" Margin="30">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>

@@ -31,27 +31,14 @@ namespace YouTube
         {
             InitializeComponent();
             videoss = new ObservableCollection<VideoInforms>();
+
+            // commands
+                ;
             DataContext = this;
 
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void changed(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void clicked(object sender, RoutedEventArgs e)
-        {
-            //videoss = new(VideoDatabase.Serachvideo(textbox.Text.ToString()));
-            //PropertyChanged!.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
-        }
-
-
-
-
-
 
         private void cliked(object sender, MouseButtonEventArgs e)
         {
@@ -59,6 +46,7 @@ namespace YouTube
             var link = $@"https://www.youtube.com/watch?v={item.VideoId}";
             webView.Visibility = Visibility.Visible;
             webView.Source = new Uri(link);
+            File.AppendAllText("..//..//..//DatabaseFiles//HistoryVideos.json", $@"{CommonLink}{item?.VideoId}{Environment.NewLine}");
         }
 
         private void clikedwindow(object sender, MouseButtonEventArgs e)
@@ -89,7 +77,20 @@ namespace YouTube
                 temp.Add(video[0]);
             }
             videoss = new(temp);
-            PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(nameof(videoss)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
+        }
+
+        private void historyClicked(object sender, RoutedEventArgs e)
+        {
+            var LikedVideos = File.ReadAllLines("..//..//..//DatabaseFiles//HistoryVideos.json");
+            List<VideoInforms> temp = new List<VideoInforms>();
+            foreach (var videoLink in LikedVideos)
+            {
+                var video = VideoDatabase.Serachvideo(videoLink);
+                temp.Add(video[0]);
+            }
+            videoss = new(temp);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(videoss)));
         }
     }
 }
